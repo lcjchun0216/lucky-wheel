@@ -18,8 +18,10 @@ jobs:
         include:
           - runner: macos-14   # Apple Silicon（M1/M2/M3/M4）原生版
             arch: arm64
-          - runner: macos-13   # Intel 芯片版
-            arch: x86_64
+          # Intel 版构建机长期拥堵，已移除；Apple 芯片版对 2020 年底后所有 Mac 通用
+          # 如需要 Intel 版，去掉下行注释即可
+          # - runner: macos-13
+          #   arch: x86_64
     runs-on: ${{ matrix.runner }}
 
     steps:
